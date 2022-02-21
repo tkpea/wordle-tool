@@ -26,19 +26,19 @@ const onChancel = () => {
     <form @cancel="onChancel">
       <p>
         <label>含まれている文字</label>
-        <input type="text" v-model="form.goodLetter" placeholder="例) abc"/>
+        <input type="text" v-model="form.goodLetter" placeholder=""/>
       </p>
       <p>
         <label>含まれていない文字</label>
-        <input type="text" v-model="form.badLetter" placeholder="例) xyz"/>
+        <input type="text" v-model="form.badLetter" placeholder=""/>
       </p>
       <p>
         <label>位置が合っている文字</label>
-        <input type="text" v-model="form.placementWords[0]" placeholder="例) a" maxlength="1"  />
-        <input type="text" v-model="form.placementWords[1]" placeholder="例) b" maxlength="1"/>
-        <input type="text" v-model="form.placementWords[2]" placeholder="例) c" maxlength="1"/>
-        <input type="text" v-model="form.placementWords[3]" placeholder="例) d" maxlength="1"/>
-        <input type="text" v-model="form.placementWords[4]" placeholder="例) d" maxlength="1"/>
+        <input type="text" v-model="form.placementWords[0]" placeholder="" maxlength="1" />
+        <input type="text" v-model="form.placementWords[1]" placeholder="" maxlength="1"/>
+        <input type="text" v-model="form.placementWords[2]" placeholder="" maxlength="1"/>
+        <input type="text" v-model="form.placementWords[3]" placeholder="" maxlength="1"/>
+        <input type="text" v-model="form.placementWords[4]" placeholder="" maxlength="1"/>
       </p>
       <div>count: {{wordsCount}}</div>
       <ul>
