@@ -8,27 +8,23 @@ export type Conditions = {
 }
 export function getAllCandidates(conditions?: Conditions,): Array<string> {
   if(!conditions) return words
-  const result = words.reduce((items: Array<string>, current: string) => {
-    const goodItems = conditions.goodLetter.split("").reduce((res: Array<string>, cur: string) => {
-      return res.filter((v) => {
-        return v.includes(cur)
-      })
-    },items)
+  const goodItems = conditions.goodLetter.split("").reduce((res: Array<string>, cur: string) => {
+    return res.filter((v) => {
+      return v.includes(cur)
+    })
+  },words)
 
-    const badItems = conditions.badLetter.split("").reduce((res: Array<string>, cur: string) => {
-      return res.filter((v) => {
-        return !v.includes(cur)
-      })
-    },goodItems)
+  const badItems = conditions.badLetter.split("").reduce((res: Array<string>, cur: string) => {
+    return res.filter((v) => {
+      return !v.includes(cur)
+    })
+  },goodItems)
 
-    const placementItems = conditions.placementWords.reduce((res: Array<string>, cur: string | undefined, index) => {
-      return res.filter((v) => {
-        return !cur ||  v.split("")[index] === cur
-      })
-    },badItems)
+  const placementItems = conditions.placementWords.reduce((res: Array<string>, cur: string | undefined, index) => {
+    return res.filter((v) => {
+      return !cur ||  v.split("")[index] === cur
+    })
+  },badItems)
 
-    return placementItems
-  }, words)
-
-  return result
+  return placementItems
 }
