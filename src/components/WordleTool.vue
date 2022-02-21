@@ -4,7 +4,7 @@ import { ref, watch} from "vue";
 const form = ref<Conditions>({
   goodLetter: "",
   badLetter: "",
-  placementWords: []
+  placementWords: [,,,,]
 })
 const words = ref<Array<string>>(getAllCandidates())
 const wordsCount = ref<number>(words.value.length)
