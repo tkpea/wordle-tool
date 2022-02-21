@@ -1,12 +1,42 @@
 <script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import {Conditions, getAllCandidates} from "./wordleService"
+import {reactive, ref, watch} from "vue";
+const form = ref<Conditions>({
+  goodLetter: "",
+  badLetter: "",
+  placementWords: []
+})
+const words = ref<Array<string>>(getAllCandidates())
+
+watch(form, () => {
+  words.value = getAllCandidates(form.value)
+}, {deep: true})
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <div>
+    <div>
+      <label>含まれている文字</label>
+      <input type="text" v-model="form.goodLetter" placeholder="例) abc"/>
+    </div>
+    <div>
+      <label>含まれていない文字</label>
+      <input type="text" v-model="form.badLetter" placeholder="例) xyz"/>
+    </div>
+    <div>
+      <label>位置が合っている文字</label>
+      <input type="text" v-model="form.placementWords[0]" placeholder="例) a" maxlength="1" />
+      <input type="text" v-model="form.placementWords[1]" placeholder="例) b" maxlength="1"/>
+      <input type="text" v-model="form.placementWords[2]" placeholder="例) c" maxlength="1"/>
+      <input type="text" v-model="form.placementWords[3]" placeholder="例) d" maxlength="1"/>
+      <input type="text" v-model="form.placementWords[4]" placeholder="例) d" maxlength="1"/>
+    </div>
+    <ul>
+      <li v-for="word in words" key="word">
+        {{word}}
+      </li>
+    </ul>
+  </div>
 </template>
 
 <style>
