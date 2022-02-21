@@ -31,7 +31,6 @@ const onChancel = () => {
             type="text"
             v-model="form.goodLetter"
             placeholder=""
-            pattern="^[A-Za-z]+$"
         />
       </div>
     </div>
@@ -47,7 +46,6 @@ const onChancel = () => {
             type="text"
             v-model="form.badLetter"
             placeholder=""
-            pattern="^[A-Za-z]+$"
         />
       </div>
     </div>
@@ -64,7 +62,6 @@ const onChancel = () => {
             v-model="form.placementWords[0]"
             placeholder=""
             maxlength="1"
-            pattern="^[A-Za-z]+$"
         />
         <input
             class="bg-gray-200 appearance-none border-2 w-1/5 mr-2 border-gray-200 rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 inline"
@@ -72,7 +69,6 @@ const onChancel = () => {
             v-model="form.placementWords[1]"
             placeholder=""
             maxlength="1"
-            pattern="^[A-Za-z]+$"
         />
         <input
             class="bg-gray-200 appearance-none border-2 w-1/5 mr-2 border-gray-200 rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 inline"
@@ -80,7 +76,6 @@ const onChancel = () => {
             v-model="form.placementWords[2]"
             placeholder=""
             maxlength="1"
-            pattern="^[A-Za-z]+$"
         />
         <input
             class="bg-gray-200 appearance-none border-2 w-1/5 mr-2 border-gray-200 rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 inline"
@@ -88,7 +83,6 @@ const onChancel = () => {
             v-model="form.placementWords[3]"
             placeholder=""
             maxlength="1"
-            pattern="^[A-Za-z]+$"
         />
         <input
             class="bg-gray-200 appearance-none border-2 w-1/5 border-gray-200 rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 inline"
@@ -96,7 +90,6 @@ const onChancel = () => {
             v-model="form.placementWords[4]"
             placeholder=""
             maxlength="1"
-            pattern="^[A-Za-z]+$"
         />
 
       </div>
