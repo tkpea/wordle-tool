@@ -35,7 +35,7 @@ const onChancel = () => {
       <input type="text" v-model="form.placementWords[3]" placeholder="" maxlength="1"/>
       <input type="text" v-model="form.placementWords[4]" placeholder="" maxlength="1"/>
     </p>
-    <div>count: {{wordsCount}}</div>
+    <div>結果: {{wordsCount}}件</div>
     <ul>
       <li v-for="word in words" key="word">
         <code translate="no">
