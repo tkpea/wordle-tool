@@ -43,7 +43,9 @@ const onChancel = () => {
       <div>count: {{wordsCount}}</div>
       <ul>
         <li v-for="word in words" key="word">
-          {{word}}
+          <code translate="no">
+            {{ word }}
+          </code>
         </li>
       </ul>
     </form>
