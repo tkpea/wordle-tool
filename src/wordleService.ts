@@ -10,17 +10,15 @@ export function getAllCandidates(conditions?: Conditions,): Array<string> {
   if(!conditions) return words
   const result = words.reduce((items: Array<string>, current: string) => {
     const goodItems = conditions.goodLetter.split("").reduce((res: Array<string>, cur: string) => {
-      const good = res.filter((v) => {
+      return res.filter((v) => {
         return v.includes(cur)
       })
-      return [...good]
     },items)
 
     const badItems = conditions.badLetter.split("").reduce((res: Array<string>, cur: string) => {
-      const bad = res.filter((v) => {
+      return res.filter((v) => {
         return !v.includes(cur)
       })
-      return [...bad]
     },goodItems)
 
     const placementItems = conditions.placementWords.reduce((res: Array<string>, cur: string | undefined, index) => {
@@ -29,7 +27,7 @@ export function getAllCandidates(conditions?: Conditions,): Array<string> {
       })
     },badItems)
 
-    return [...placementItems]
+    return placementItems
   }, words)
 
   return result
