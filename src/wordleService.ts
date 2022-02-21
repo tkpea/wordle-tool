@@ -10,19 +10,19 @@ export function getAllCandidates(conditions?: Conditions,): Array<string> {
   if(!conditions) return words
   const goodItems = conditions.goodLetter.split("").reduce((res: Array<string>, cur: string) => {
     return res.filter((v) => {
-      return v.includes(cur)
+      return v.includes(cur.toLowerCase())
     })
   },words)
 
   const badItems = conditions.badLetter.split("").reduce((res: Array<string>, cur: string) => {
     return res.filter((v) => {
-      return !v.includes(cur)
+      return !v.includes(cur.toLowerCase())
     })
   },goodItems)
 
   const placementItems = conditions.placementWords.reduce((res: Array<string>, cur: string | undefined, index) => {
     return res.filter((v) => {
-      return !cur ||  v.split("")[index] === cur
+      return !cur ||  v.split("")[index] === cur.toLowerCase()
     })
   },badItems)
 

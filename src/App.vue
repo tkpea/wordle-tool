@@ -2,10 +2,13 @@
 import WordleTool from "./components/WordleTool.vue";
 </script>
 <template>
-  <div>
-    <h1>Wordle Tool</h1>
-    <a href="https://www.nytimes.com/games/wordle/index.html" target="_blank" rel="noopener noreferrer">Wordle - The New York Times</a>
-    <hr/>
+  <div class="container">
+    <header class="py-4 px-4">
+      <h1 class="text-3xl">Wordle Tool</h1>
+      <a href="https://www.nytimes.com/games/wordle/index.html" target="_blank" rel="noopener noreferrer" class="text-blue underline">Wordle - The New York Times</a>
+      <hr/>
+
+    </header>
     <WordleTool/>
   </div>
 
